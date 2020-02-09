@@ -1,0 +1,412 @@
+body {
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+    color: #1b1b1b;
+}
+
+.flexbox-container {
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 35px;
+    font-weight: 300;
+    margin-bottom: 0px;
+}
+h4 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;
+    margin: 15px 0px 5px;
+}
+
+
+/*===================================
+                HEADER
+===================================*/
+
+header {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+header,footer {
+    background: #ffffff;
+    border-bottom: 10px solid #006bb6;
+    align-items: center;
+    padding: 10px;
+}
+header .logo,
+footer .logo {
+    flex-grow: 1;
+    height: 22px;
+}
+header .logo span,
+footer .logo span {
+    background: url('/images/logo.png') no-repeat;
+    display: inline-block;
+    width: 58px;
+    height: 24px;
+}
+
+header a {
+    text-decoration: none;
+    font-family: Roboto;
+    color: #0d6ab4;
+    font-weight: 800;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+footer {
+    background: #1f1f1f;
+    margin-top: 30px;
+}
+
+/*===================================
+                SLIDER
+===================================*/
+
+.item_slider {
+    height:700px;
+    background-size: cover !important;
+    background-position: center center !important;
+    position: relative;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.item_slider .caption {
+    color: #fff;
+    position: absolute;
+    right: 0px;
+    padding: 20px;
+    text-align: right;
+    width: 320px;
+    text-transform: uppercase;
+}
+
+.item_slider .caption h4 {
+    font-weight: 300;
+    padding: 10px;
+    border-bottom: 1px solid #666666;
+}
+
+.item_slider .caption p {
+    font-size: 47px;
+    margin-top: 0px;
+    font-family: Righteous;
+    color: #FF5722;
+}
+
+
+/*===================================
+            SUBSCRIBE
+===================================*/
+
+.subcribe_panel {
+    text-align: center;
+    width: 350px;
+    margin: 0 auto;
+}
+
+.subcribe_panel h3 {
+    font-family: Roboto;
+    font-size: 35px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+.subcribe_panel input {
+    border-radius: 20px;
+    border: 3px solid #dddddd;
+    text-align: center;
+    font-size: 22px;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.subcribe_panel input:focus {
+    outline-width: 0;
+}
+.subcribe_panel small {
+    font-size: 10px;
+    line-height: 0px;
+}
+.subcribe_panel .error{
+    display:none;
+    color: #F44336;
+}
+.subcribe_panel .success {
+    display:none; 
+    color: #4CAF50;
+}
+
+
+.subcribe_panel .error.show,
+.subcribe_panel .success.show  {
+    display:block;
+}
+
+/*===================================
+            BLOCKS
+===================================*/
+
+.home_block {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.home_block .item {
+    flex-grow: 1;
+    position: relative;
+    height: 270px;
+    overflow: hidden;
+}
+
+.home_block .item.lg  {
+    width:50%;
+}
+
+.home_block .item.md  {
+    width:30%;
+}
+
+.home_block .item.sm  {
+    width:20%;
+}
+
+.home_block .item .image{
+    height: 270px;
+    background-size: cover !important;
+    background-position: center center !important;
+}
+
+.home_block .item .title {
+    font-family: Roboto;
+    font-weight: 600;
+    background: #24394b;
+    padding: 10px;
+    transition: all 500ms ease-in-out;
+}
+
+.home_block .item:hover .title {
+    transform: translate(0px, -39px);
+    transition: all 500ms ease-in-out;
+}
+
+.home_block .item .title a {
+    color:#fff;
+}
+
+
+
+.home_block .item.lg {
+  -webkit-animation-delay: 200ms;
+}
+.home_block .item.md {
+  -webkit-animation-delay: 500ms;
+}
+.home_block .item.sm {
+  -webkit-animation-delay: 800ms;
+}
+
+.home_block .item .veil {
+    background: #000000;
+    opacity:0.7;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    transition: all 500ms ease-in-out;
+
+}
+.home_block .item:hover .veil {
+    opacity:0;
+    transition: all 500ms ease-in-out;
+}
+
+
+/*===================================
+                POLL
+===================================*/
+
+.home_poll {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+.home_poll h3{
+    margin: 50px;
+}
+
+
+.poll_container {
+    display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+}
+.poll_container .poll_item{
+    padding:20px;
+    flex-grow: 1;
+}
+
+.poll_container .poll_item img{
+    width: 80%;
+}
+.poll_container .poll_item div {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 18px;
+}
+
+/*===================================
+                TEAMS
+===================================*/
+
+
+.teams_component {
+    min-height: 800px;
+}
+
+.teams_input {
+    text-align: center;
+    padding: 20px 0px;
+    background: #e6e6e6;
+}
+
+.teams_input input {
+    font-family: Roboto;
+    border-radius: 30px;
+    border: 1px solid lightgrey;
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.teams_input  input:focus{
+    outline: none;
+}
+
+
+.teams_container span {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.teams_container .team_item{
+    width: 12.5%;
+    padding:30px;
+    box-sizing: border-box;
+}
+.teams_container .team_item img {
+    width:100%;
+}
+
+.team_search_error {
+    
+}
+
+
+/*===================================
+                TEAM
+===================================*/
+
+.team_data_wrapper {
+    display: flex; 
+}
+
+.team_data_wrapper .left {
+    box-sizing: border-box;
+    padding:10px 20px;
+}
+
+.team_data_wrapper .right {
+    flex-grow: 1;
+    box-sizing: border-box;
+    border-left: 1px solid #b9b9b9;
+    padding: 0px 20px;
+}
+
+.team_data_wrapper .left img {
+    width: 150px;
+}
+
+
+.team_data_wrapper h1{
+    color: #6d6d6d;
+}
+
+
+.team_data_wrapper .squad {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.team_data_wrapper .squad .item {
+    position: relative;
+    width: 25%;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.team_data_wrapper .squad h4 {
+    text-align: center;
+    color: #006bb6;
+}
+
+
+.team_data_wrapper .squad .item img {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+}
+.team_data_wrapper .squad .item .node{
+    font-size: 14px;
+    padding: 4px 0px;
+}
+.team_data_wrapper .squad .item .node span{
+    font-weight: 600;
+}
+
+/*=======================================
+                FADE 
+========================================*/
+
+.fade-appear {
+  opacity: 0.01;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
