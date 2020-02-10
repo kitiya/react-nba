@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { URL_HOME } from "../utils/paths";
 import SliderWidget from "../utils/widgets/slider";
+import Subscription from "../utils/widgets/subscription";
 
 const Home = () => {
   const [sliderData, setSliderData] = useState([]);
@@ -11,20 +12,14 @@ const Home = () => {
       const data = response.data;
       setSliderData(data.slider);
 
-      console.log(data);
+      // console.log(data);
     });
   }, []);
 
   return (
     <>
-      {/* {sliderData.map(slider => (
-        <div key={slider.id}>
-          <p>Title: {slider.title}</p>
-          <img alt="cover" src={`/images/covers/${slider.cover}`} />
-        </div>
-      ))} */}
-
       <SliderWidget slides={sliderData} />
+      <Subscription />
     </>
   );
 };

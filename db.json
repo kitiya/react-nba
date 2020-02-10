@@ -86,7 +86,14 @@
     ]
   },
   "subscriptions": [
-    
+    {
+      "email": "aaa@gmail.com",
+      "id": 1
+    },
+    {
+      "email": "xxx@gmail.com",
+      "id": 2
+    }
   ],
   "teams": [
     {
