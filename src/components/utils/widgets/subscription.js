@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { URL_EMAIL } from "../paths";
 
 const Subscription = () => {
   const [email, setEmail] = useState("");
-  // const [submittedEmail, setSubmittedEmail] = useState("");
+  const [submittedEmail, setSubmittedEmail] = useState("");
   const [hasError, setHasError] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isDuplicate, setIsDuplicate] = useState(false);
@@ -17,37 +17,41 @@ const Subscription = () => {
     }, 3000);
   };
 
-  const saveSubscription = email => {
-    axios.get(`${URL_EMAIL}?email=${email}`).then(response => {
-      // if the email doesn't exist, sending a POST request
-      if (!response.data.length) {
-        axios(URL_EMAIL, {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json"
-          },
-          // using stringnify to parse an object to string
-          data: JSON.stringify({ email })
-        }).then(response => {
+  useEffect(() => {
+    const saveSubscription = () => {
+      axios.get(`${URL_EMAIL}?email=${submittedEmail}`).then(response => {
+        // if the email doesn't exist, sending a POST request
+        if (!response.data.length) {
+          axios(URL_EMAIL, {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json"
+            },
+            // using stringnify to parse an object to string
+            data: JSON.stringify({ email: submittedEmail })
+          }).then(response => {
+            setEmail("");
+            setIsSuccess(true);
+            clearMessages();
+          });
+        } else {
+          // if the email already exists.
           setEmail("");
-          setIsSuccess(true);
+          setIsDuplicate(true);
           clearMessages();
-        });
-      } else {
-        // if the email already exists.
-        setEmail("");
-        setIsDuplicate(true);
-        clearMessages();
-      }
-    });
-  };
+        }
+      });
+    };
+    saveSubscription();
+  }, [submittedEmail]);
 
   const handleSubmit = event => {
     event.preventDefault();
 
     if (validateEmail(email)) {
-      saveSubscription(email);
+      setSubmittedEmail(email);
+      //saveSubscription(email);
     } else {
       setHasError(true);
     }
