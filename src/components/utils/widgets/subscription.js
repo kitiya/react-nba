@@ -43,15 +43,16 @@ const Subscription = () => {
         }
       });
     };
-    saveSubscription();
+    if (submittedEmail !== "") {
+      saveSubscription();
+    }
   }, [submittedEmail]);
 
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (validateEmail(email)) {
+    if (email !== "" && validateEmail(email)) {
       setSubmittedEmail(email);
-      //saveSubscription(email);
     } else {
       setHasError(true);
     }
@@ -69,7 +70,7 @@ const Subscription = () => {
 
   return (
     <div className="subscribe_panel">
-      <h3>Subscribe to use</h3>
+      <h3>Subscribe to our newsletter...</h3>
       <div>
         <form onSubmit={handleSubmit}>
           <input

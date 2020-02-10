@@ -110,21 +110,21 @@ footer {
 
 .subscribe_panel {
   text-align: center;
-  width: 350px;
+  width: 500px;
   margin: 0 auto;
 }
 
 .subscribe_panel h3 {
   font-family: Roboto;
-  font-size: 35px;
+  font-size: 28px;
   font-weight: 300;
-  margin-bottom: 20px;
 }
+
 .subscribe_panel input {
   border-radius: 20px;
   border: 3px solid #dddddd;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
   padding: 10px;
   margin: 10px 0px;
 }
@@ -133,7 +133,7 @@ footer {
   outline-width: 0;
 }
 .subscribe_panel small {
-  font-size: 10px;
+  font-size: 12px;
   line-height: 0px;
 }
 .subscribe_panel .error {
@@ -156,39 +156,39 @@ footer {
             BLOCKS
 ===================================*/
 
-.home_block {
+.home_collage {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 40px;
 }
 
-.home_block .item {
+.home_collage .item {
   flex-grow: 1;
   position: relative;
   height: 270px;
   overflow: hidden;
 }
 
-.home_block .item.lg {
+.home_collage .item.lg {
   width: 50%;
 }
 
-.home_block .item.md {
+.home_collage .item.md {
   width: 30%;
 }
 
-.home_block .item.sm {
+.home_collage .item.sm {
   width: 20%;
 }
 
-.home_block .item .image {
+.home_collage .item .image {
   height: 270px;
   background-size: cover !important;
   background-position: center center !important;
 }
 
-.home_block .item .title {
+.home_collage .item .title {
   font-family: Roboto;
   font-weight: 600;
   background: #24394b;
@@ -196,29 +196,29 @@ footer {
   transition: all 500ms ease-in-out;
 }
 
-.home_block .item:hover .title {
+.home_collage .item:hover .title {
   transform: translate(0px, -39px);
   transition: all 500ms ease-in-out;
 }
 
-.home_block .item .title a {
+.home_collage .item .title a {
   color: #fff;
 }
 
-.home_block .item.lg {
+.home_collage .item.lg {
   animation-delay: 200ms;
   -webkit-animation-delay: 200ms;
 }
-.home_block .item.md {
+.home_collage .item.md {
   animation-delay: 200ms;
   -webkit-animation-delay: 500ms;
 }
-.home_block .item.sm {
+.home_collage .item.sm {
   animation-delay: 200ms;
   -webkit-animation-delay: 800ms;
 }
 
-.home_block .item .veil {
+.home_collage .item .veil {
   background: #000000;
   opacity: 0.7;
   height: 100%;
@@ -227,7 +227,7 @@ footer {
   position: absolute;
   transition: all 500ms ease-in-out;
 }
-.home_block .item:hover .veil {
+.home_collage .item:hover .veil {
   opacity: 0;
   transition: all 500ms ease-in-out;
 }
