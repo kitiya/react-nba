@@ -5,22 +5,39 @@ import { URL_TEAMS } from "../utils/paths";
 const Poll = () => {
   const [pollData, setPollData] = useState([]);
 
-  useEffect(() => {
-    const getPoll = () => {
-      axios
-        .get(`${URL_TEAMS}?poll=true&_sort=count&_order=desc`)
-        .then(response => {
-          setPollData(response.data);
-        });
-    };
+  const fetchPoll = () => {
+    axios
+      .get(`${URL_TEAMS}?poll=true&_sort=count&_order=desc`)
+      .then(response => {
+        setPollData(response.data);
+      });
+  };
 
-    getPoll();
+  useEffect(() => {
+    fetchPoll();
   }, []);
+
+  const addCount = (id, count) => {
+    axios(`${URL_TEAMS}/${id}`, {
+      method: "PATCH",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      data: JSON.stringify({ count: count + 1 })
+    }).then(() => {
+      fetchPoll();
+    });
+  };
 
   const renderPoll = () => {
     const rank = ["1ST", "2ND", "3RD"];
     return pollData.map((item, index) => (
-      <div key={item.id} className="poll_item">
+      <div
+        key={item.id}
+        className="poll_item"
+        onClick={() => addCount(item.id, item.count)}
+      >
         <img alt={item.name} src={`/images/teams/${item.logo}`} />
         <h4>{rank[index]}</h4>
         <div>{item.count} Votes</div>

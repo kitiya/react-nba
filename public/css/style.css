@@ -255,6 +255,10 @@ footer {
   flex-grow: 1;
 }
 
+.poll_container .poll_item:hover {
+  cursor: pointer;
+}
+
 .poll_container .poll_item img {
   width: 80%;
 }
