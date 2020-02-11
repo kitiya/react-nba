@@ -15,7 +15,7 @@ const generateCollage = collageData =>
               }}
             ></div>
             <div className="title">
-              <Link to={item.dunk}>{item.title}</Link>
+              <Link to={item.link}>{item.title}</Link>
             </div>
           </div>
         </Fade>
