@@ -4,13 +4,17 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./components/header-footer/header";
 import Footer from "./components/header-footer/footer";
 import Home from "./components/home";
+import Teams from "./components/teams";
 
 const Routes = () => (
   // <div>Hello</div>
   <BrowserRouter>
     <Header />
     <Switch>
-      <Route path="/" component={Home} />
+      <Route exact path="/" component={Home} />
+    </Switch>
+    <Switch>
+      <Route path="/teams" component={Teams} />
     </Switch>
     <Footer />
   </BrowserRouter>
