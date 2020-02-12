@@ -50,6 +50,7 @@ const Poll = () => {
       {console.log(pollData)}
       <div className="home_poll">
         <h3>Who will be the next champion?</h3>
+        <h4>Click one of the logo below to vote!</h4>
         <div className="poll_container">{renderPoll()}</div>
       </div>
     </>

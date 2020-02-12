@@ -24,7 +24,7 @@ const Teams = () => {
   const renderTeams = () =>
     filtered.map(team => (
       <CSSTransition key={team.id} timeout={500} classNames="fade">
-        <Link to={`/team/${team.name}`} className="team_item">
+        <Link to={`/teams/${team.name}`} className="team_item">
           <img alt={team.name} src={`/images/teams/${team.logo}`} />
         </Link>
       </CSSTransition>

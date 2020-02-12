@@ -242,7 +242,12 @@ footer {
   text-align: center;
 }
 .home_poll h3 {
-  margin: 50px;
+  margin: 50px auto 20px;
+}
+
+.home_poll h4 {
+  font-weight: 300;
+  margin: 20px auto 30px;
 }
 
 .poll_container {

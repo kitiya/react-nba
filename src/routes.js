@@ -5,6 +5,7 @@ import Header from "./components/header-footer/header";
 import Footer from "./components/header-footer/footer";
 import Home from "./components/home";
 import Teams from "./components/teams";
+import Team from "./components/teams/team";
 
 const Routes = () => (
   // <div>Hello</div>
@@ -14,7 +15,10 @@ const Routes = () => (
       <Route exact path="/" component={Home} />
     </Switch>
     <Switch>
-      <Route path="/teams" component={Teams} />
+      <Route exact path="/teams" component={Teams} />
+    </Switch>
+    <Switch>
+      <Route exact path="/teams/:name" component={Team} />
     </Switch>
     <Footer />
   </BrowserRouter>
