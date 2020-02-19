@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { URL_TEAMS } from "../utils/paths";
+import { MY_JSON_API } from "../utils/paths";
 
 const Teams = () => {
   const [teams, setTeams] = useState([]);
@@ -11,9 +11,9 @@ const Teams = () => {
 
   useEffect(() => {
     const fetchTeam = () => {
-      Axios.get(URL_TEAMS).then(response => {
-        console.log(response.data);
-        setTeams(response.data);
+      Axios.get(MY_JSON_API).then(response => {
+        // console.log(response.data);
+        setTeams(response.data.teams);
         setFiltered(response.data);
       });
     };

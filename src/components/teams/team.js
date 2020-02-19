@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { URL_TEAMS } from "../utils/paths";
+import { MY_JSON_API } from "../utils/paths";
 
 const Team = props => {
   const name = props.match.params.name;
@@ -8,12 +8,12 @@ const Team = props => {
 
   useEffect(() => {
     const fetchTeam = () => {
-      axios
-        .get(`${URL_TEAMS}?name=${name}`)
-        .then(response => setData(response.data[0]));
+      axios.get(MY_JSON_API).then(response => {
+        setData(response.data.teams.filter(team => team.name === name)[0]);
+      });
     };
     fetchTeam();
-  }, [name]);
+  }, []);
 
   const renderSquad = squad =>
     squad

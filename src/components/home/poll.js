@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { URL_TEAMS } from "../utils/paths";
+import { MY_JSON_API, URL_TEAMS } from "../utils/paths";
 
 const Poll = () => {
   const [pollData, setPollData] = useState([]);
 
+  // JSON SERVER
+  // const fetchPoll = () => {
+  //   axios
+  //     .get(`${URL_TEAMS}?poll=true&_sort=count&_order=desc`)
+  //     .then(response => {
+  //       setPollData(response.data);
+  //     });
+  // };
+
   const fetchPoll = () => {
-    axios
-      .get(`${URL_TEAMS}?poll=true&_sort=count&_order=desc`)
-      .then(response => {
-        setPollData(response.data);
-      });
+    axios.get(MY_JSON_API).then(response => {
+      setPollData(response.data.teams.filter(team => team.poll === "true"));
+    });
   };
 
   useEffect(() => {
